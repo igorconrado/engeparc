@@ -12,13 +12,13 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center bg-navy overflow-hidden"
+      className="hero-grain relative min-h-screen flex items-center justify-center bg-navy overflow-hidden"
     >
       {/* Industrial Blueprint Background */}
       <div className="absolute inset-0">
         {/* Grid Pattern */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.06]"
           style={{
             backgroundImage: `
               linear-gradient(rgba(245,158,11,0.3) 1px, transparent 1px),
@@ -39,8 +39,19 @@ export function Hero() {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light/90 to-navy" />
 
-      {/* Radial Glow */}
+      {/* Depth Radial Gradient */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 70% 80%, #0A2540 0%, transparent 60%)',
+        }}
+      />
+
+      {/* Radial Glow - Center */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-amber/5 rounded-full blur-3xl" />
+
+      {/* Radial Glow - Top Left */}
+      <div className="absolute top-[10%] left-[20%] w-[600px] h-[600px] bg-amber/[0.03] rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center max-w-4xl mx-auto">
