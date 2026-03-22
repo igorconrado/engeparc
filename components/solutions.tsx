@@ -1,7 +1,9 @@
 "use client"
 
+import { useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Factory, Building2, FileCheck, ArrowRight } from "lucide-react"
+import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 const solutions = [
   {
@@ -27,11 +29,18 @@ const solutions = [
   },
 ]
 
+const delayClasses = ["", "animate-delay-200", "animate-delay-400"] as const
+
 export function Solutions() {
+  const headingRef = useRef<HTMLDivElement>(null)
+  const cardsRef = useRef<HTMLDivElement>(null)
+  const headingVisible = useAnimateOnScroll(headingRef)
+  const cardsVisible = useAnimateOnScroll(cardsRef)
+
   return (
     <section id="solucoes" className="py-24 bg-navy">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={headingRef} className={`animate-on-scroll ${headingVisible ? "is-visible" : ""} text-center mb-16`}>
           <p className="text-amber text-sm font-semibold uppercase tracking-wider mb-3">
             Nossas Solucoes
           </p>
@@ -43,11 +52,11 @@ export function Solutions() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div ref={cardsRef} className="grid md:grid-cols-3 gap-6">
           {solutions.map((solution, index) => (
             <Card
               key={index}
-              className="group bg-white/[0.03] border-white/10 hover:border-amber/50 transition-all duration-300 hover:bg-white/[0.06]"
+              className={`animate-on-scroll ${cardsVisible ? "is-visible" : ""} ${delayClasses[index]} group bg-white/[0.03] border-white/10 hover:border-amber/50 transition-all duration-300 hover:bg-white/[0.06]`}
             >
               <CardHeader className="pb-4">
                 <div className="w-16 h-16 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center mb-5">

@@ -1,5 +1,8 @@
 "use client"
 
+import { useRef } from "react"
+import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
+
 const clients = [
   { name: "Anglo Gold", initials: "AG" },
   { name: "BH Shopping", initials: "BH" },
@@ -12,9 +15,12 @@ const clients = [
 ]
 
 export function Clients() {
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const isVisible = useAnimateOnScroll(sectionRef)
+
   return (
     <section className="py-20 bg-navy-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={sectionRef} className={`animate-on-scroll ${isVisible ? "is-visible" : ""} max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}>
         <div className="text-center mb-14">
           <p className="text-amber text-sm font-semibold uppercase tracking-wider mb-3">
             Prova Social

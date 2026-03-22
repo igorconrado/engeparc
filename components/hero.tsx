@@ -1,9 +1,14 @@
 "use client"
 
+import { useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Shield, Zap, Award } from "lucide-react"
+import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 export function Hero() {
+  const statsRef = useRef<HTMLDivElement>(null)
+  const statsVisible = useAnimateOnScroll(statsRef)
+
   return (
     <section
       id="inicio"
@@ -12,7 +17,7 @@ export function Hero() {
       {/* Industrial Blueprint Background */}
       <div className="absolute inset-0">
         {/* Grid Pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage: `
@@ -23,17 +28,17 @@ export function Hero() {
           }}
         />
         {/* Circuit Pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h80v80H10z' fill='none' stroke='%23F59E0B' strokeWidth='0.5'/%3E%3Ccircle cx='10' cy='10' r='3' fill='%23F59E0B'/%3E%3Ccircle cx='90' cy='10' r='3' fill='%23F59E0B'/%3E%3Ccircle cx='10' cy='90' r='3' fill='%23F59E0B'/%3E%3Ccircle cx='90' cy='90' r='3' fill='%23F59E0B'/%3E%3Cpath d='M50 10v30M10 50h30M90 50h-30M50 90v-30' stroke='%23F59E0B' strokeWidth='0.5'/%3E%3Ccircle cx='50' cy='50' r='5' fill='none' stroke='%23F59E0B' strokeWidth='0.5'/%3E%3C/svg%3E")`,
           }}
         />
       </div>
-      
+
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light/90 to-navy" />
-      
+
       {/* Radial Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-amber/5 rounded-full blur-3xl" />
 
@@ -83,22 +88,21 @@ export function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="text-center p-8 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/10 hover:border-amber/30 transition-colors">
-            <Award className="w-10 h-10 text-amber mx-auto mb-4" />
-            <div className="text-5xl font-bold text-white mb-2">30+</div>
-            <div className="text-gray-light text-sm uppercase tracking-wider">Anos de Experiencia</div>
-          </div>
-          <div className="text-center p-8 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/10 hover:border-amber/30 transition-colors">
-            <Zap className="w-10 h-10 text-amber mx-auto mb-4" />
-            <div className="text-5xl font-bold text-white mb-2">500+</div>
-            <div className="text-gray-light text-sm uppercase tracking-wider">Projetos Entregues</div>
-          </div>
-          <div className="text-center p-8 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/10 hover:border-amber/30 transition-colors">
-            <Shield className="w-10 h-10 text-amber mx-auto mb-4" />
-            <div className="text-5xl font-bold text-white mb-2">0</div>
-            <div className="text-gray-light text-sm uppercase tracking-wider">Acidentes Graves</div>
-          </div>
+        <div ref={statsRef} className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            { icon: Award, value: "30+", label: "Anos de Experiencia" },
+            { icon: Zap, value: "500+", label: "Projetos Entregues" },
+            { icon: Shield, value: "0", label: "Acidentes Graves" },
+          ].map((stat, index) => (
+            <div
+              key={index}
+              className={`animate-on-scroll ${statsVisible ? "is-visible" : ""} animate-delay-${(index + 1) * 100} text-center p-8 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/10 hover:border-amber/30 transition-colors`}
+            >
+              <stat.icon className="w-10 h-10 text-amber mx-auto mb-4" />
+              <div className="text-5xl font-bold text-white mb-2">{stat.value}</div>
+              <div className="text-gray-light text-sm uppercase tracking-wider">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

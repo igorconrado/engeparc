@@ -1,9 +1,14 @@
 "use client"
 
+import { useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, MessageCircle, Zap } from "lucide-react"
+import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 export function Footer() {
+  const ctaRef = useRef<HTMLDivElement>(null)
+  const ctaVisible = useAnimateOnScroll(ctaRef)
+
   const whatsappNumber = "5531999999999"
   const whatsappMessage = encodeURIComponent(
     "Ola! Gostaria de saber mais sobre os servicos da Engeparc."
@@ -14,7 +19,7 @@ export function Footer() {
       {/* CTA Section */}
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center max-w-2xl mx-auto">
+          <div ref={ctaRef} className={`animate-on-scroll ${ctaVisible ? "is-visible" : ""} text-center max-w-2xl mx-auto`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Pronto para comecar seu projeto?
             </h2>
