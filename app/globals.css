@@ -89,8 +89,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
-  --font-serif: 'Montserrat', 'Montserrat Fallback', serif;
+  --font-sans: 'DM Sans', 'DM Sans Fallback', system-ui, sans-serif;
+  --font-serif: 'Plus Jakarta Sans', 'Plus Jakarta Sans Fallback', sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
   
   --color-background: var(--background);

@@ -1,11 +1,11 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Montserrat, Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans, DM_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
-const _inter = Inter({ subsets: ["latin"] });
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["600", "700", "800"], variable: "--font-display" });
+const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: 'Engeparc | Engenharia Eletrica de Alta Complexidade',
@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`font-sans antialiased`}>
+      <body className={`${plusJakarta.variable} ${dmSans.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
