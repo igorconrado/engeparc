@@ -1,9 +1,14 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, MessageCircle, Zap } from "lucide-react"
+import { Phone, Mail, MapPin, MessageCircle } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
+
+// TODO: Substituir por logo real quando disponível
+const LOGO_SRC = "/engeparc-logo-dark.png"
+const HAS_REAL_LOGO = false
 
 export function Footer() {
   const ctaRef = useRef<HTMLDivElement>(null)
@@ -50,23 +55,35 @@ export function Footer() {
           {/* Contact Info */}
           <div>
             <div className="mb-10">
-              {/* Hexagonal Logo */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="relative w-14 h-14">
-                  <svg viewBox="0 0 48 48" className="w-full h-full">
-                    <polygon 
-                      points="24,2 44,14 44,34 24,46 4,34 4,14" 
-                      fill="#0B1E33" 
-                      stroke="#F59E0B" 
-                      strokeWidth="2"
-                    />
-                  </svg>
-                  <Zap className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-amber" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-2xl font-serif font-bold text-white tracking-tight">ENGEPARC</span>
-                  <span className="text-xs text-gray-light tracking-[0.2em] uppercase">Engenharia</span>
-                </div>
+              {/* Logo */}
+              <div className="mb-6">
+                {HAS_REAL_LOGO ? (
+                  <Image
+                    src={LOGO_SRC}
+                    alt="Engeparc Engenharia"
+                    height={56}
+                    width={224}
+                    className="h-14 w-auto"
+                  />
+                ) : (
+                  <div className="flex items-center gap-4">
+                    <div className="relative w-14 h-14">
+                      <svg viewBox="0 0 48 48" className="w-full h-full">
+                        <polygon
+                          points="24,2 44,14 44,34 24,46 4,34 4,14"
+                          fill="#0B1E33"
+                          stroke="#F59E0B"
+                          strokeWidth="2"
+                        />
+                        <text x="24" y="28" textAnchor="middle" fill="#F59E0B" fontSize="16" fontWeight="bold">⚡</text>
+                      </svg>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-2xl font-serif font-bold text-white tracking-tight">ENGEPARC</span>
+                      <span className="text-xs text-gray-light tracking-[0.2em] uppercase">Engenharia</span>
+                    </div>
+                  </div>
+                )}
               </div>
               <p className="text-gray-light max-w-md leading-relaxed">
                 Engenharia eletrica de alta complexidade para industrias e grandes empreendimentos em Minas Gerais.
