@@ -1,6 +1,8 @@
 "use client"
 
+import { useRef } from "react"
 import { Eye, FileText, ShieldCheck } from "lucide-react"
+import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 const differentials = [
   {
@@ -22,11 +24,18 @@ const differentials = [
   },
 ]
 
+const delayClasses = ["", "animate-delay-200", "animate-delay-400"] as const
+
 export function Differentials() {
+  const headingRef = useRef<HTMLDivElement>(null)
+  const cardsRef = useRef<HTMLDivElement>(null)
+  const headingVisible = useAnimateOnScroll(headingRef)
+  const cardsVisible = useAnimateOnScroll(cardsRef)
+
   return (
     <section id="diferenciais" className="py-24 bg-navy">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={headingRef} className={`animate-on-scroll ${headingVisible ? "is-visible" : ""} text-center mb-16`}>
           <p className="text-amber text-sm font-semibold uppercase tracking-wider mb-3">
             Nossos Diferenciais
           </p>
@@ -38,11 +47,11 @@ export function Differentials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div ref={cardsRef} className="grid md:grid-cols-3 gap-8">
           {differentials.map((item, index) => (
             <div
               key={index}
-              className="relative group p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-amber/50 transition-all duration-300"
+              className={`animate-on-scroll ${cardsVisible ? "is-visible" : ""} ${delayClasses[index]} relative group p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-amber/50 transition-all duration-300`}
             >
               {/* Number indicator */}
               <div className="absolute top-6 right-6 text-6xl font-bold text-white/5">
