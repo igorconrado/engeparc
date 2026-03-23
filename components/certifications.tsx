@@ -10,7 +10,6 @@ const norms = [
   { code: "NBR 5419", title: "Proteção contra Descargas Atmosféricas (SPDA)" },
   { code: "NBR 13534", title: "Instalações Elétricas em Estabelecimentos de Saúde" },
   { code: "NR-12", title: "Segurança em Máquinas e Equipamentos" },
-  { code: "NBR 16690", title: "Sistemas Fotovoltaicos" },
   { code: "AVCB", title: "Auto de Vistoria do Corpo de Bombeiros" },
 ]
 

@@ -103,14 +103,14 @@ export function Hero() {
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 text-balance">
-            Engenharia Eletrica de{" "}
-            <span className="text-amber">Alta Complexidade</span>{" "}
-            para Industrias e Grandes Empreendimentos.
+            A engenharia elétrica por trás dos{" "}
+            <span className="text-amber">maiores nomes</span>{" "}
+            de Minas Gerais.
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-gray-light max-w-2xl mx-auto mb-12 leading-relaxed">
-            Desde 1991 garantindo seguranca energetica e eficiencia para os maiores nomes de Minas Gerais.
+            CEMIG, Anglo Gold, BDMG, BH Shopping. Há mais de 35 anos, quem exige segurança e eficiência energética confia na Engeparc.
           </p>
 
           {/* CTA Buttons */}
@@ -121,7 +121,7 @@ export function Hero() {
               className="bg-amber hover:bg-amber-light text-navy font-bold px-10 py-7 text-lg shadow-lg shadow-amber/25 group"
             >
               <a href="#contato">
-                Solicitar Consultoria Tecnica
+                Solicitar Diagnóstico Técnico
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
@@ -131,14 +131,14 @@ export function Hero() {
               size="lg"
               className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-10 py-7 text-lg bg-transparent"
             >
-              <a href="#solucoes">Conhecer Solucoes</a>
+              <a href="#solucoes">Conhecer Soluções</a>
             </Button>
           </div>
         </div>
 
         {/* Stats */}
         <div ref={statsRef} className="mt-24 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <StatCard icon={Award} target={35} suffix="+" label="Anos de Experiencia" duration={2000} delayClass="animate-delay-100" visible={statsVisible} />
+          <StatCard icon={Award} target={35} suffix="+" label="Anos de Mercado" duration={2000} delayClass="animate-delay-100" visible={statsVisible} />
           <StatCard icon={Zap} target={500} suffix="+" label="Projetos Entregues" duration={2500} delayClass="animate-delay-200" visible={statsVisible} />
           <StatCard icon={Users} target={150} suffix="+" label="Clientes Atendidos" duration={2000} delayClass="animate-delay-300" visible={statsVisible} />
         </div>

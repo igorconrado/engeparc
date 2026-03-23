@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react"
+import { Phone, Mail, MapPin, MessageCircle, Linkedin, Instagram } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 // TODO: Substituir por logo real quando disponível
@@ -14,7 +14,7 @@ export function Footer() {
   const ctaRef = useRef<HTMLDivElement>(null)
   const ctaVisible = useAnimateOnScroll(ctaRef)
 
-  const whatsappNumber = "5531999999999"
+  const whatsappNumber = "5531999717110"
   const whatsappMessage = encodeURIComponent(
     "Ola! Gostaria de saber mais sobre os servicos da Engeparc."
   )
@@ -26,10 +26,11 @@ export function Footer() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div ref={ctaRef} className={`animate-on-scroll ${ctaVisible ? "is-visible" : ""} text-center max-w-2xl mx-auto`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Pronto para comecar seu projeto?
+              Converse diretamente com o{" "}
+              <span className="text-amber">Eng. Sérgio</span>
             </h2>
             <p className="text-gray-light mb-10 text-lg">
-              Entre em contato conosco e receba uma consultoria tecnica personalizada.
+              Solicite um diagnóstico técnico ou tire suas dúvidas. Sem intermediários, sem formulários — direto com o engenheiro responsável.
             </p>
             <Button
               asChild
@@ -132,7 +133,7 @@ export function Footer() {
                 )}
               </div>
               <p className="text-gray-light max-w-md leading-relaxed">
-                Engenharia eletrica de alta complexidade para industrias e grandes empreendimentos em Minas Gerais.
+                Engenharia elétrica de alta complexidade para indústrias, edificações e grandes empreendimentos. Atuando em Minas Gerais e em todo o Brasil desde 1991.
               </p>
             </div>
 
@@ -148,25 +149,25 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-light">WhatsApp</p>
-                  <p className="font-semibold text-white">(31) 99999-9999</p>
+                  <p className="font-semibold text-white">(31) 99971-7110</p>
                 </div>
               </a>
 
               <a
-                href="tel:+553132222222"
+                href="tel:+553132955211"
                 className="flex items-center gap-4 text-white/80 hover:text-amber transition-colors group"
               >
                 <div className="w-12 h-12 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center group-hover:bg-amber/20 transition-colors">
                   <Phone className="w-5 h-5 text-amber" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-light">Telefone Fixo</p>
-                  <p className="font-semibold text-white">(31) 3222-2222</p>
+                  <p className="text-sm text-gray-light">Telefone</p>
+                  <p className="font-semibold text-white">(31) 3295-5211</p>
                 </div>
               </a>
 
               <a
-                href="mailto:contato@engeparc.com.br"
+                href="mailto:engeparc@engeparc.com.br"
                 className="flex items-center gap-4 text-white/80 hover:text-amber transition-colors group"
               >
                 <div className="w-12 h-12 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center group-hover:bg-amber/20 transition-colors">
@@ -174,7 +175,7 @@ export function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-light">E-mail</p>
-                  <p className="font-semibold text-white">contato@engeparc.com.br</p>
+                  <p className="font-semibold text-white">engeparc@engeparc.com.br</p>
                 </div>
               </a>
 
@@ -183,9 +184,32 @@ export function Footer() {
                   <MapPin className="w-5 h-5 text-amber" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-light">Endereco</p>
-                  <p className="font-semibold text-white">Barro Preto, Belo Horizonte - MG</p>
+                  <p className="text-sm text-gray-light">Endereço</p>
+                  <p className="font-semibold text-white">Rua Ouro Preto, 581 — Salas 1005/1007</p>
+                  <p className="font-semibold text-white">Barro Preto, Belo Horizonte — MG</p>
                 </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex items-center gap-4 pt-4">
+                <a
+                  href="https://www.linkedin.com/company/engeparcengenharia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center hover:bg-amber/20 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5 text-amber" />
+                </a>
+                <a
+                  href="https://www.instagram.com/engeparc.engenharia/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl bg-amber/10 border border-amber/20 flex items-center justify-center hover:bg-amber/20 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5 text-amber" />
+                </a>
               </div>
             </div>
           </div>
