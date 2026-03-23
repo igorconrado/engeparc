@@ -8,35 +8,35 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion"
-import { Factory, Building2, FileCheck, ArrowRight } from "lucide-react"
+import { BarChart3, Factory, FileCheck, ArrowRight } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 const solutions = [
   {
-    icon: Factory,
-    title: "Industria & Alta Tensao",
-    subtitle: "Subestações e manutenção industrial",
+    icon: BarChart3,
+    title: "Consultoria Energética",
+    subtitle: "Reduza custos, recupere créditos",
     description:
-      "Projetos de subestacoes, manutencao preventiva e adequacao de fabricas. Evite paradas na producao.",
-    features: ["Subestacoes", "Manutencao Preventiva", "Adequacao Industrial"],
+      "Diagnósticos energéticos, redução de custos com energia elétrica, correção de fator de potência e recuperação de crédito de ICMS. Soluções que se pagam sozinhas.",
+    features: ["Diagnósticos e estudos técnicos", "Crédito de ICMS sobre energia elétrica", "Correção de fator de potência", "Otimização e redução de custos"],
     iconBg: "bg-amber/10",
   },
   {
-    icon: Building2,
-    title: "Condominios & Edificacoes",
-    subtitle: "Reformas e adequação predial",
+    icon: Factory,
+    title: "Projetos & Execução",
+    subtitle: "Do projeto à entrega final",
     description:
-      "Reformas de prumadas, modernizacao de PC de luz e adequacao para AVCB (Bombeiros). Seguranca para o sindico e moradores.",
-    features: ["Reforma de Prumadas", "Modernizacao", "AVCB"],
+      "Projetos de instalações elétricas, luminotécnica, subestações e montagens. Execução e manutenção com acompanhamento direto do engenheiro responsável.",
+    features: ["Projetos de instalações elétricas", "Luminotécnica", "Execução de instalações e montagens", "Manutenção preventiva e corretiva"],
     iconBg: "bg-amber/[0.12]",
   },
   {
     icon: FileCheck,
-    title: "Consultoria & Laudos",
-    subtitle: "Documentação técnica e economia",
+    title: "Laudos & Fiscalização",
+    subtitle: "Documentação técnica precisa",
     description:
-      "Laudos de SPDA, Credito de ICMS e Eficiencia Energetica. Documentacao tecnica precisa para evitar multas e economizar dinheiro.",
-    features: ["Laudos SPDA", "Credito ICMS", "Eficiencia Energetica"],
+      "Vistorias técnicas, inspeções de fabricação e montagem, fiscalização de obras e laudos. A experiência de 35 anos traduzida em documentação que protege seu patrimônio.",
+    features: ["Diagnóstico de instalações", "Inspeção de fabricação e montagem", "Fiscalização de obras", "Laudos técnicos (SPDA e mais)"],
     iconBg: "bg-amber/15",
   },
 ]
@@ -55,13 +55,13 @@ export function Solutions() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={headingRef} className={`animate-on-scroll ${headingVisible ? "is-visible" : ""} text-center mb-16`}>
           <p className="text-amber text-sm font-semibold uppercase tracking-wider mb-3">
-            Nossas Solucoes
+            Nossas Soluções
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            O que oferecemos
+            Três décadas de soluções comprovadas
           </h2>
           <p className="text-gray-light max-w-2xl mx-auto text-lg">
-            Solucoes completas em engenharia eletrica para atender as demandas mais complexas do mercado.
+            Cada serviço abaixo é respaldado por mais de 500 projetos entregues e pela confiança dos maiores nomes do mercado mineiro.
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export function Solutions() {
                     ))}
                   </ul>
                   <span className="inline-flex items-center text-amber font-semibold text-sm group-hover:text-amber-light transition-colors">
-                    Saiba mais
+                    Solicitar orçamento
                     <ArrowRight className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </CardContent>

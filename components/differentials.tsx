@@ -5,34 +5,35 @@ import { Eye, FileText, ShieldCheck, AlertTriangle } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 const problems = [
-  "Estagiários tocando obra sem supervisão",
-  "Orçamentos obscuros e custos surpresa",
-  "Engenheiro que você nunca vê na obra",
+  "Estagiário tocando obra",
+  "Relatórios vagos e atrasos",
+  "Surpresas no orçamento",
 ]
 
 const engeparcSolutions = [
-  "Engenheiro Sênior em cada projeto",
-  "Relatórios detalhados e transparentes",
-  "Acompanhamento direto do início ao fim",
+  "Engenheiro sênior em cada projeto",
+  "Documentação detalhada e prazos cumpridos",
+  "Transparência total nos custos",
 ]
 
 const differentials = [
   {
     icon: Eye,
-    title: "Visao do Dono",
+    title: "Visão do Dono",
     description:
-      "Seu projeto acompanhado diretamente pelo Engenheiro Senior, nao por estagiarios.",
+      "Seu projeto é acompanhado diretamente pelo Eng. Sérgio Conrado, com mais de 35 anos de experiência. Não delegamos a complexidade — a lideramos.",
   },
   {
     icon: FileText,
-    title: "Transparencia Total",
+    title: "Transparência Documentada",
     description:
-      "Relatorios detalhados. Voce entende exatamente onde cada centavo foi investido.",
+      "Relatórios técnicos detalhados em cada etapa. Você entende exatamente o estado do seu projeto, os riscos mapeados e onde cada recurso foi aplicado.",
   },
   {
     icon: ShieldCheck,
-    title: "Historico Comprovado",
-    description: "Zero acidentes graves em 30 anos de atuacao.",
+    title: "Histórico Comprovado",
+    description:
+      "Em mais de três décadas de atuação, nenhum acidente grave registrado. Segurança não é slogan — é resultado de método e experiência.",
   },
 ]
 
@@ -54,11 +55,9 @@ export function Differentials() {
             Nossos Diferenciais
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 text-balance">
-            Por que a engenharia tradicional ainda e a melhor escolha?
+            Por que empresas trocam de fornecedor{" "}
+            <span className="text-amber">e escolhem a Engeparc?</span>
           </h2>
-          <p className="text-gray-light max-w-2xl mx-auto text-lg">
-            Mais de tres decadas de experiencia e compromisso com a excelencia.
-          </p>
         </div>
 
         {/* Problem vs Solution Comparison */}

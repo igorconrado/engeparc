@@ -6,7 +6,7 @@ import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 const credentials = [
   "Engenheiro Eletricista",
   "CEFET-MG — Turma de 1987",
-  "CREA-MG Ativo",
+  "CREA-MG 50415/D",
   "Diretor Técnico",
 ]
 
@@ -26,10 +26,11 @@ export function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={sectionRef} className={`animate-on-scroll ${sectionVisible ? "is-visible" : ""} text-center mb-16`}>
           <p className="text-amber text-sm font-semibold uppercase tracking-wider mb-3">
-            Quem Somos
+            O Engenheiro Responsável
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 text-balance">
-            Engenharia com nome e sobrenome
+            Eng. Sérgio Conrado{" "}
+            <span className="text-amber">Almeida</span>
           </h2>
         </div>
 
@@ -79,8 +80,8 @@ export function About() {
                   <span className="text-amber font-bold text-sm">CREA</span>
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-sm">Registro CREA-MG Ativo</p>
-                  <p className="text-gray-light text-xs">Habilitado para projetos e fiscalização em todo o território nacional</p>
+                  <p className="text-white font-semibold text-sm">CREA-MG 50415/D</p>
+                  <p className="text-gray-light text-xs">Desde 1990</p>
                 </div>
               </div>
             </div>
