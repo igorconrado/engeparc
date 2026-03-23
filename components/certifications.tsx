@@ -18,7 +18,7 @@ export function Certifications() {
   const isVisible = useAnimateOnScroll(sectionRef)
 
   return (
-    <section className="py-14 bg-navy border-t border-white/[0.05]">
+    <section className="py-14 bg-navy-light">
       <div ref={sectionRef} className={`animate-on-scroll ${isVisible ? "is-visible" : ""} max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}>
         <div className="text-center mb-10">
           <p className="text-amber text-sm font-semibold uppercase tracking-wider mb-3">

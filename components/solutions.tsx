@@ -51,7 +51,7 @@ export function Solutions() {
   const cardsVisible = useAnimateOnScroll(cardsRef)
 
   return (
-    <section id="solucoes" className="py-24 bg-navy">
+    <section id="solucoes" className="py-24 bg-navy-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={headingRef} className={`animate-on-scroll ${headingVisible ? "is-visible" : ""} text-center mb-16`}>
           <p className="text-amber text-sm font-semibold uppercase tracking-wider mb-3">
