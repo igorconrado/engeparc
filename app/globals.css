@@ -175,6 +175,100 @@ html {
 .animate-delay-400 { transition-delay: 400ms; }
 .animate-delay-500 { transition-delay: 500ms; }
 
+/* Buttons — lift on hover */
+button, [role="button"], a[role="button"] {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+button:hover, [role="button"]:hover {
+  transform: translateY(-1px);
+}
+
+/* CTA amber buttons — scale + lift + glow on hover */
+.bg-amber {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.bg-amber:hover {
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: 0 0 20px rgba(245,158,11,0.3);
+}
+
+/* Cards interativos — lift + shadow */
+.group:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+/* Interactive elements — ensure pointer cursor */
+a, button, [role="button"], .cursor-pointer {
+  cursor: pointer;
+}
+
+/* Navbar links — animated underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--amber);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* WhatsApp float — subtle bounce */
+@keyframes float-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Pulse glow animation for WhatsApp CTA */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(245,158,11,0.2); }
+  50% { box-shadow: 0 0 30px rgba(245,158,11,0.4); }
+}
+
+/* CTA grid background pattern */
+.cta-grid-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image:
+    linear-gradient(rgba(245,158,11,0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,158,11,0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Photo wrapper decorative corner */
+.photo-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  width: 60px;
+  height: 60px;
+  border-right: 3px solid var(--amber);
+  border-bottom: 3px solid var(--amber);
+  border-radius: 0 0 8px 0;
+  pointer-events: none;
+}
+
 /* Hero grain texture */
 .hero-grain::before {
   content: '';

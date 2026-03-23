@@ -22,8 +22,8 @@ export function Footer() {
   return (
     <footer id="contato" className="bg-navy-light">
       {/* CTA Section */}
-      <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="cta-grid-bg relative overflow-hidden border-b border-white/10">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div ref={ctaRef} className={`animate-on-scroll ${ctaVisible ? "is-visible" : ""} text-center max-w-2xl mx-auto`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Pronto para comecar seu projeto?
@@ -35,6 +35,7 @@ export function Footer() {
               asChild
               size="lg"
               className="bg-amber hover:bg-amber-light text-navy font-bold px-10 py-7 text-lg shadow-lg shadow-amber/25"
+              style={{ animation: "pulse-glow 2.5s ease-in-out infinite" }}
             >
               <a
                 href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
@@ -45,6 +46,51 @@ export function Footer() {
                 Falar no WhatsApp
               </a>
             </Button>
+
+            {/* Contact Form */}
+            <div className="border-t border-white/10 pt-8 mt-8">
+              <p className="text-gray-light text-sm mb-6">
+                Prefere e-mail? Envie sua mensagem diretamente.
+              </p>
+              {/* TODO: Integrar com Formspree ou backend */}
+              <form action="mailto:engeparc@engeparc.com.br" method="POST" encType="text/plain" className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="nome"
+                    placeholder="Nome"
+                    required
+                    className="bg-white/[0.05] border border-white/10 text-white placeholder:text-white/30 rounded-xl px-4 py-3 w-full focus:border-amber/50 focus:outline-none transition-colors"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="E-mail"
+                    required
+                    className="bg-white/[0.05] border border-white/10 text-white placeholder:text-white/30 rounded-xl px-4 py-3 w-full focus:border-amber/50 focus:outline-none transition-colors"
+                  />
+                </div>
+                <input
+                  type="tel"
+                  name="telefone"
+                  placeholder="Telefone"
+                  className="bg-white/[0.05] border border-white/10 text-white placeholder:text-white/30 rounded-xl px-4 py-3 w-full focus:border-amber/50 focus:outline-none transition-colors"
+                />
+                <textarea
+                  name="mensagem"
+                  placeholder="Mensagem"
+                  rows={4}
+                  required
+                  className="bg-white/[0.05] border border-white/10 text-white placeholder:text-white/30 rounded-xl px-4 py-3 w-full focus:border-amber/50 focus:outline-none transition-colors resize-none"
+                />
+                <button
+                  type="submit"
+                  className="bg-white/10 border border-white/20 text-white hover:bg-white/20 rounded-xl px-8 py-3 font-semibold transition-colors"
+                >
+                  Enviar Mensagem
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -165,11 +211,11 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-light text-sm">
-              {new Date().getFullYear()} Engeparc Engenharia. Todos os direitos reservados.
+              &copy; {new Date().getFullYear()} Engeparc Engenharia LTDA. Todos os direitos reservados.
             </p>
             <div className="flex items-center gap-6 text-sm">
-              <span className="text-amber font-semibold">CREA-MG: 12345</span>
-              <span className="text-gray-light">CNPJ: 00.000.000/0001-00</span>
+              <span className="text-amber font-semibold">CREA-MG: 50415/D</span>
+              <span className="text-gray-light">CNPJ: 38.732.574/0001-27</span>
             </div>
           </div>
         </div>
