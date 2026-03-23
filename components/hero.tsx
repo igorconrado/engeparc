@@ -49,7 +49,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="hero-grain relative min-h-screen flex items-center justify-center bg-navy overflow-hidden pb-16"
+      className="hero-grain relative min-h-screen flex items-center justify-center bg-navy overflow-hidden"
     >
       {/* Industrial Blueprint Background */}
       <div className="absolute inset-0" style={{ transform: parallaxOffset }}>
@@ -144,15 +144,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Angular SVG Divider */}
-      <svg
-        className="absolute bottom-0 left-0 right-0 w-full"
-        viewBox="0 0 1440 60"
-        preserveAspectRatio="none"
-        style={{ height: '50px' }}
-      >
-        <path d="M0,60 L720,0 L1440,60 Z" fill="var(--navy-light)" />
-      </svg>
     </section>
   )
 }

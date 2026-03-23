@@ -20,14 +20,14 @@ export function Footer() {
   )
 
   return (
-    <footer id="contato" className="bg-navy-light">
+    <footer id="contato" className="bg-navy">
       {/* CTA Section */}
       <div className="cta-grid-bg relative overflow-hidden border-b border-white/10">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div ref={ctaRef} className={`animate-on-scroll ${ctaVisible ? "is-visible" : ""} text-center max-w-2xl mx-auto`}>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Converse diretamente com o{" "}
-              <span className="text-amber">Eng. Sérgio</span>
+              <span className="whitespace-nowrap"><span className="text-amber">Eng. Sérgio</span></span>
             </h2>
             <p className="text-gray-light mb-10 text-lg">
               Solicite um diagnóstico técnico ou tire suas dúvidas. Sem intermediários, sem formulários — direto com o engenheiro responsável.

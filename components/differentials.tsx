@@ -4,16 +4,10 @@ import { useRef } from "react"
 import { Eye, FileText, ShieldCheck, AlertTriangle } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
-const problems = [
-  "Estagiário tocando obra",
-  "Relatórios vagos e atrasos",
-  "Surpresas no orçamento",
-]
-
-const engeparcSolutions = [
-  "Engenheiro sênior em cada projeto",
-  "Documentação detalhada e prazos cumpridos",
-  "Transparência total nos custos",
+const comparisons = [
+  { problem: "Estagiário tocando obra", solution: "Engenheiro sênior em cada projeto" },
+  { problem: "Relatórios vagos e atrasos", solution: "Documentação detalhada e prazos cumpridos" },
+  { problem: "Surpresas no orçamento", solution: "Transparência total nos custos" },
 ]
 
 const differentials = [
@@ -63,52 +57,27 @@ export function Differentials() {
         {/* Problem vs Solution Comparison */}
         <div
           ref={comparisonRef}
-          className={`animate-on-scroll ${comparisonVisible ? "is-visible" : ""} grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden mb-16`}
+          className={`animate-on-scroll ${comparisonVisible ? "is-visible" : ""} grid sm:grid-cols-3 gap-3 sm:gap-4 mb-16`}
         >
-          {/* O Problema */}
-          <div className="bg-red-500/[0.04] border border-red-500/[0.15] md:rounded-l-2xl md:border-r-0 p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
-                <AlertTriangle className="w-5 h-5 text-red-400/80" />
+          {comparisons.map((pair, index) => (
+            <div key={index} className="bg-white/[0.03] border border-white/10 rounded-xl p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <AlertTriangle className="w-4 h-4 text-red-400/70" />
+                <span className="text-red-400/70 text-xs font-semibold uppercase tracking-wider">O problema</span>
               </div>
-              <span className="text-red-400/80 text-sm font-semibold uppercase tracking-wider">
-                O Problema
-              </span>
-            </div>
-            <ul className="space-y-4">
-              {problems.map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-400/40 flex-shrink-0" />
-                  <span className="text-gray-light line-through decoration-red-400/40 decoration-2">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Divider - mobile horizontal, desktop vertical */}
-          <div className="h-px md:h-auto md:w-px bg-gradient-to-r md:bg-gradient-to-b from-red-500/10 via-white/5 to-amber/20" />
-
-          {/* Engeparc */}
-          <div className="bg-amber/[0.04] border border-amber/20 md:rounded-r-2xl md:border-l-0 p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-amber" />
+              <p className="text-white/50 text-sm mb-4 line-through decoration-red-400/30">
+                {pair.problem}
+              </p>
+              <div className="h-px bg-gradient-to-r from-red-500/10 via-white/5 to-amber/20 mb-4" />
+              <div className="flex items-center gap-2 mb-2">
+                <ShieldCheck className="w-4 h-4 text-amber" />
+                <span className="text-amber text-xs font-semibold uppercase tracking-wider">Engeparc</span>
               </div>
-              <span className="text-amber text-sm font-semibold uppercase tracking-wider">
-                Engeparc
-              </span>
+              <p className="text-white font-semibold text-sm">
+                {pair.solution}
+              </p>
             </div>
-            <ul className="space-y-4">
-              {engeparcSolutions.map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber flex-shrink-0" />
-                  <span className="text-white/90">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          ))}
         </div>
 
         {/* Cards */}
