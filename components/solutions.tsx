@@ -9,6 +9,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion"
 import { BarChart3, Factory, FileCheck, ArrowRight } from "lucide-react"
+import { scrollToSection } from "@/lib/utils"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 const solutions = [
@@ -68,7 +69,7 @@ export function Solutions() {
         {/* Desktop Cards */}
         <div ref={cardsRef} className="hidden md:grid md:grid-cols-3 gap-6">
           {solutions.map((solution, index) => (
-            <a key={index} href="#contato" className="block cursor-pointer">
+            <button key={index} onClick={() => scrollToSection("contato")} className="block cursor-pointer text-left w-full">
               <Card
                 className={`animate-on-scroll ${cardsVisible ? "is-visible" : ""} ${delayClasses[index]} group relative overflow-hidden bg-white/[0.03] border-white/10 hover:border-amber/50 transition-all duration-300 hover:bg-white/[0.06] h-full`}
               >
@@ -103,7 +104,7 @@ export function Solutions() {
                   </span>
                 </CardContent>
               </Card>
-            </a>
+            </button>
           ))}
         </div>
 
@@ -136,13 +137,13 @@ export function Solutions() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contato"
+                <button
+                  onClick={() => scrollToSection("contato")}
                   className="inline-flex items-center text-amber font-semibold text-sm hover:text-amber-light transition-colors"
                 >
                   Solicitar orçamento
                   <ArrowRight className="ml-1.5 w-4 h-4" />
-                </a>
+                </button>
               </AccordionContent>
             </AccordionItem>
           ))}

@@ -25,7 +25,7 @@ function ClientItem({ name, logo }: { name: string; logo: string }) {
   const [imgError, setImgError] = useState(false)
 
   return (
-    <div className="min-w-[180px] h-14 flex items-center justify-center px-6 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+    <div className="min-w-[180px] h-14 flex items-center justify-center pr-8 shrink-0 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
       {imgError ? (
         <span className="text-white/50 font-semibold text-sm tracking-wide whitespace-nowrap">
           {name}
@@ -48,7 +48,7 @@ export function Clients() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const isVisible = useAnimateOnScroll(sectionRef)
 
-  const duplicated = [...clients, ...clients]
+  const tripled = [...clients, ...clients, ...clients]
 
   return (
     <section className="py-20 bg-navy-light overflow-hidden">
@@ -71,12 +71,14 @@ export function Clients() {
           }}
         >
           <div
-            className="flex gap-8 group-hover:[animation-play-state:paused]"
+            className="flex group-hover:[animation-play-state:paused]"
             style={{
-              animation: "marquee 35s linear infinite",
+              width: "fit-content",
+              animation: "marquee 40s linear infinite",
+              willChange: "transform",
             }}
           >
-            {duplicated.map((client, index) => (
+            {tripled.map((client, index) => (
               <ClientItem key={index} name={client.name} logo={client.logo} />
             ))}
           </div>

@@ -60,22 +60,31 @@ export function Differentials() {
           className={`animate-on-scroll ${comparisonVisible ? "is-visible" : ""} grid sm:grid-cols-3 gap-3 sm:gap-4 mb-16`}
         >
           {comparisons.map((pair, index) => (
-            <div key={index} className="bg-white/[0.03] border border-white/10 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <AlertTriangle className="w-4 h-4 text-red-400/70" />
-                <span className="text-red-400/70 text-xs font-semibold uppercase tracking-wider">O problema</span>
+            <div key={index} className="bg-white/[0.03] border border-white/10 hover:border-amber/30 transition-colors rounded-xl p-5">
+              {/* Problem block */}
+              <div className="bg-red-500/[0.04] rounded-lg p-4 mb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <AlertTriangle className="w-4 h-4 text-red-400" />
+                  <span className="text-red-400/70 text-xs font-semibold uppercase tracking-wider">O problema</span>
+                </div>
+                <p className="text-white/40 text-sm line-through decoration-red-400/40 decoration-2">
+                  {pair.problem}
+                </p>
               </div>
-              <p className="text-white/50 text-sm mb-4 line-through decoration-red-400/30">
-                {pair.problem}
-              </p>
-              <div className="h-px bg-gradient-to-r from-red-500/10 via-white/5 to-amber/20 mb-4" />
-              <div className="flex items-center gap-2 mb-2">
-                <ShieldCheck className="w-4 h-4 text-amber" />
-                <span className="text-amber text-xs font-semibold uppercase tracking-wider">Engeparc</span>
+
+              {/* Divider */}
+              <div className="h-px bg-gradient-to-r from-red-500/10 via-white/10 to-amber/20 my-3" />
+
+              {/* Solution block */}
+              <div className="bg-amber/[0.04] rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <ShieldCheck className="w-4 h-4 text-amber" />
+                  <span className="text-amber text-xs font-semibold uppercase tracking-wider">Engeparc</span>
+                </div>
+                <p className="text-white font-semibold text-sm">
+                  {pair.solution}
+                </p>
               </div>
-              <p className="text-white font-semibold text-sm">
-                {pair.solution}
-              </p>
             </div>
           ))}
         </div>

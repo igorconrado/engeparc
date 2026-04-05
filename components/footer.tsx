@@ -15,7 +15,7 @@ export function Footer() {
 
   const whatsappNumber = "5531999717110"
   const whatsappMessage = encodeURIComponent(
-    "Ola! Gostaria de saber mais sobre os servicos da Engeparc."
+    "Olá, Eng. Sérgio! Gostaria de solicitar um diagnóstico técnico para o meu projeto."
   )
 
   return (
@@ -216,7 +216,7 @@ export function Footer() {
           {/* Google Map - Full Width Column */}
           <div className="rounded-2xl overflow-hidden border border-white/10 h-[400px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.8!2d-43.94!3d-19.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDU1JzEyLjAiUyA0M8KwNTYnMjQuMCJX!5e0!3m2!1spt-BR!2sbr!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.0292147877863!2d-43.95307072278114!3d-19.923183681463812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6975c54b401a3%3A0xa88a753940dc992e!2sR.%20Ouro%20Preto%2C%20581%20-%20Barro%20Preto%2C%20Belo%20Horizonte%20-%20MG%2C%2030170-044!5e0!3m2!1spt-BR!2sbr!4v1775412132116!5m2!1spt-BR!2sbr"
               width="100%"
               height="100%"
               style={{ border: 0 }}
