@@ -8,25 +8,12 @@ const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["600", "700
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: 'Engeparc | Engenharia Eletrica de Alta Complexidade',
-  description: 'Desde 1991 garantindo seguranca energetica e eficiencia para os maiores nomes de Minas Gerais. Projetos de subestacoes, manutencao preventiva, laudos tecnicos e consultoria.',
+  title: 'Engeparc | Engenharia Elétrica de Alta Complexidade',
+  description: 'Desde 1991 garantindo segurança energética e eficiência para os maiores empreendimentos de Minas Gerais. Projetos de subestações, manutenção preventiva, laudos técnicos e consultoria.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.png',
+    apple: '/favicon.png',
   },
 }
 
