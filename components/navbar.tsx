@@ -4,14 +4,14 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn, scrollToSection } from "@/lib/utils"
 
 const navLinks = [
-  { href: "#inicio", label: "Início" },
-  { href: "#solucoes", label: "Soluções" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#diferenciais", label: "Diferenciais" },
-  { href: "#contato", label: "Contato" },
+  { id: "inicio", label: "Início" },
+  { id: "solucoes", label: "Soluções" },
+  { id: "sobre", label: "Sobre" },
+  { id: "diferenciais", label: "Diferenciais" },
+  { id: "contato", label: "Contato" },
 ]
 
 const LOGO_SRC = "/engeparc-logo-white.png"
@@ -63,7 +63,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center">
+          <button onClick={() => scrollToSection("inicio")} className="flex items-center">
             {HAS_REAL_LOGO ? (
               <Image
                 src={LOGO_SRC}
@@ -76,24 +76,24 @@ export function Navbar() {
             ) : (
               <LogoPlaceholder height={48} />
             )}
-          </a>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
                 className="nav-link text-white/80 hover:text-amber transition-colors text-sm font-medium"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
             <Button
-              asChild
               className="bg-amber hover:bg-amber-light text-navy font-semibold px-6"
+              onClick={() => scrollToSection("contato")}
             >
-              <a href="#contato">Fale Conosco</a>
+              Fale Conosco
             </Button>
           </div>
 
@@ -113,22 +113,19 @@ export function Navbar() {
           <div className="md:hidden mt-4 pb-4 border-t border-white/10">
             <div className="flex flex-col gap-4 pt-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-white/80 hover:text-amber transition-colors text-sm font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <button
+                  key={link.id}
+                  onClick={() => { scrollToSection(link.id); setIsMobileMenuOpen(false) }}
+                  className="text-white/80 hover:text-amber transition-colors text-sm font-medium text-left"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
               <Button
-                asChild
                 className="bg-amber hover:bg-amber-light text-navy font-semibold w-full"
+                onClick={() => { scrollToSection("contato"); setIsMobileMenuOpen(false) }}
               >
-                <a href="#contato" onClick={() => setIsMobileMenuOpen(false)}>
-                  Fale Conosco
-                </a>
+                Fale Conosco
               </Button>
             </div>
           </div>
