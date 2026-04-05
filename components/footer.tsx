@@ -6,9 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, MessageCircle, Linkedin, Instagram } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
-// TODO: Substituir por logo real quando disponível
-const LOGO_SRC = "/engeparc-logo-dark.png"
-const HAS_REAL_LOGO = false
+const LOGO_SRC = "/engeparc-logo-white.png"
+const HAS_REAL_LOGO = true
 
 export function Footer() {
   const ctaRef = useRef<HTMLDivElement>(null)

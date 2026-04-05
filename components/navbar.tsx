@@ -14,9 +14,8 @@ const navLinks = [
   { href: "#contato", label: "Contato" },
 ]
 
-// TODO: Substituir por logo real quando disponível
-const LOGO_SRC = "/engeparc-logo-dark.png"
-const HAS_REAL_LOGO = false
+const LOGO_SRC = "/engeparc-logo-white.png"
+const HAS_REAL_LOGO = true
 
 function LogoPlaceholder({ height }: { height: number }) {
   return (
