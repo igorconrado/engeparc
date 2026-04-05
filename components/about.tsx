@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 
 const credentials = [
@@ -38,11 +39,14 @@ export function About() {
           {/* Photo Column */}
           <div ref={photoRef} className={`animate-on-scroll ${photoVisible ? "is-visible" : ""} flex flex-col items-center lg:items-start gap-6`}>
             <div className="photo-wrapper relative">
-              <div className="w-64 h-80 sm:w-72 sm:h-96 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center">
-                <span className="text-5xl font-bold text-white/20 tracking-widest">
-                  SCA
-                </span>
-              </div>
+              <Image
+                src="/sergio-conrado.png"
+                alt="Eng. Sérgio Conrado Almeida"
+                width={288}
+                height={384}
+                className="w-64 h-80 sm:w-72 sm:h-96 rounded-2xl object-cover object-top border border-white/10"
+                priority
+              />
             </div>
 
             {/* Credential Tags */}
