@@ -156,7 +156,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Scroll animations */
@@ -233,7 +233,7 @@ a, button, [role="button"], .cursor-pointer {
 /* Marquee animation */
 @keyframes marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-33.333%); }
 }
 
 /* Pulse glow animation for WhatsApp CTA */
