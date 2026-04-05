@@ -3,6 +3,7 @@
 import { useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Users, Zap, Award, type LucideIcon } from "lucide-react"
+import { scrollToSection } from "@/lib/utils"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
 import { useCountUp } from "@/hooks/use-count-up"
 import { useParallax } from "@/hooks/use-parallax"
@@ -97,7 +98,7 @@ export function Hero() {
           <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-amber/30 rounded-full px-5 py-2.5 mb-8">
             <span className="w-2 h-2 bg-amber rounded-full animate-pulse" />
             <span className="text-amber text-sm font-semibold tracking-wide">
-              Excelencia desde 1991
+              Excelência desde 1991
             </span>
           </div>
 
@@ -110,28 +111,26 @@ export function Hero() {
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-gray-light max-w-2xl mx-auto mb-12 leading-relaxed">
-            CEMIG, Anglo Gold, BDMG, BH Shopping. Há mais de 35 anos, quem exige segurança e eficiência energética confia na Engeparc.
+            Há mais de 35 anos projetando, fiscalizando e protegendo o patrimônio elétrico dos maiores empreendimentos de Minas Gerais.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
-              asChild
               size="lg"
               className="bg-amber hover:bg-amber-light text-navy font-bold px-10 py-7 text-lg shadow-lg shadow-amber/25 group"
+              onClick={() => scrollToSection("contato")}
             >
-              <a href="#contato">
-                Solicitar Diagnóstico Técnico
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              Solicitar Diagnóstico Técnico
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
-              asChild
               variant="outline"
               size="lg"
               className="border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-10 py-7 text-lg bg-transparent"
+              onClick={() => scrollToSection("solucoes")}
             >
-              <a href="#solucoes">Conhecer Soluções</a>
+              Conhecer Soluções
             </Button>
           </div>
         </div>
